@@ -27,7 +27,7 @@
             type="radar"
             :options="myRadarChart"
             :series="myRadarChart.series"
-            class="w-full mt-10"
+            class="w-[500px] h-[400px] mt-10"
           />
         </ClientOnly>
       </div>
@@ -59,7 +59,7 @@ const myLineChart = ref({
     height: 300,
     type: "line",
     zoom: {
-      enabled: true,
+      enabled: false,
     },
   },
   dataLabels: {
@@ -81,6 +81,9 @@ const myLineChart = ref({
   xaxis: {
     catagories: ["jan", "feb", "mar", "apr", "may", "jun"],
   },
+  legend: {
+    show: false
+  }
 });
 
 //two charts
@@ -171,19 +174,16 @@ const myRadarChart = ref({
   ],
   chart: {
     type: "radar",
-    height: 350,
+    height: 550,
     dropShadow: {
-      enabled: true,
-      blur: 1,
-      left: 1,
-      top: 1,
+      enabled: false,
     },
+    toolbar: {
+      show: false
+    }
   },
   title: {
     text: "Readar chart practice",
-  },
-  stroke: {
-    width: 2,
   },
   fill: {
     opacity: 0.1,
@@ -194,6 +194,9 @@ const myRadarChart = ref({
   xaxis: {
     catagories: ["2011", "2012", "2013", "2014", "2015", "2016"],
   },
+  legend: {
+    show: false,
+  }
 });
 
 const myPieChart = ref({
